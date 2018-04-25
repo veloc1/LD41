@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Menu_Close.wav-0a5d51d1e0e24a4640ddb2e051fba0db.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Menu_Close.wav"
+source_md5="a55b50f0e2597bacb09b8d78108698ca"
+
+dest_files=[ "res://.import/Menu_Close.wav-0a5d51d1e0e24a4640ddb2e051fba0db.sample" ]
+dest_md5="6076966851643ac3eacb92e9dc1e3d3b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

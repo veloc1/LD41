@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Menu_Fall.wav-a0f3c88ee9bcc21ed400fe150fd769af.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Menu_Fall.wav"
+source_md5="06ec83af13b77dccf69f52db29ed6815"
+
+dest_files=[ "res://.import/Menu_Fall.wav-a0f3c88ee9bcc21ed400fe150fd769af.sample" ]
+dest_md5="465663a53cf58ab2a0a14716501258f4"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

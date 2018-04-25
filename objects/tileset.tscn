@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/tm_wood.png" type="Texture" id=1]
+
+[node name="tileset" type="Node2D"]
+
+[node name="tl" type="Sprite" parent="." index="0"]
+
+position = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="l" type="Sprite" parent="." index="1"]
+
+position = Vector2( 8, 28 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="bl" type="Sprite" parent="." index="2"]
+
+position = Vector2( 8, 48 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="t" type="Sprite" parent="." index="3"]
+
+position = Vector2( 28, 8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="m" type="Sprite" parent="." index="4"]
+
+position = Vector2( 28, 28 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 16, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="b" type="Sprite" parent="." index="5"]
+
+position = Vector2( 28, 48 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="tr" type="Sprite" parent="." index="6"]
+
+position = Vector2( 48, 8 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 0, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="r" type="Sprite" parent="." index="7"]
+
+position = Vector2( 48, 28 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+[node name="br" type="Sprite" parent="." index="8"]
+
+position = Vector2( 48, 48 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 16, 16 )
+_sections_unfolded = [ "Offset", "Region" ]
+
+

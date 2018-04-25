@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/craft.gd" type="Script" id=1]
+[ext_resource path="res://assets/frame.png" type="Texture" id=2]
+
+[node name="craft" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="frame" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset", "Region", "Transform", "Visibility", "Z Index" ]
+
+[node name="m3" type="Sprite" parent="." index="1"]
+
+

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/lightning.gd" type="Script" id=1]
+[ext_resource path="res://assets/fireball.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6.54417, 4.53611 )
+
+[node name="lightning" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 8
+collision_mask = 5
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+modulate = Color( 0.814453, 0.6875, 1, 1 )
+self_modulate = Color( 0.238384, 0.202911, 0.851563, 1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+shape = SubResource( 1 )
+
+

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Menu_Translate.wav-7a38d8ce6e59ca70e0a20eaa80fc66d6.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Menu_Translate.wav"
+source_md5="8cdf28e3322ec603b2972433501a0012"
+
+dest_files=[ "res://.import/Menu_Translate.wav-7a38d8ce6e59ca70e0a20eaa80fc66d6.sample" ]
+dest_md5="9cf07bbf844cec6574c3cd18829f1620"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://objects/spider.gd" type="Script" id=1]
+[ext_resource path="res://assets/spider.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6.17442, 3.10755 )
+
+[node name="spider" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 4
+collision_mask = 11
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+patrol = null
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 7.62939e-06, 4.48289 )
+shape = SubResource( 1 )
+
+

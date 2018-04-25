@@ -1,0 +1,449 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scenes/game.gd" type="Script" id=1]
+[ext_resource path="res://objects/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/tilemap.tres" type="TileSet" id=3]
+[ext_resource path="res://objects/craft.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/bar_under.png" type="Texture" id=5]
+[ext_resource path="res://assets/bar_hp_fill.png" type="Texture" id=6]
+[ext_resource path="res://font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/spell_queue.gd" type="Script" id=8]
+[ext_resource path="res://objects/warning.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/spider.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/sounds.gd" type="Script" id=11]
+[ext_resource path="res://assets/sounds/Heal.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/Jump.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/Hurt.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/Menu_Open.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/Menu_Close.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sounds/Menu_Translate.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/sounds/Menu_New.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/sounds/Menu_Remove1.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/sounds/Menu_Remove2.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/sounds/Menu_Remove3.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/sounds/Menu_Fall.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/sounds/Menu_Move.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/sounds/Menu_Hold.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/sounds/Shoot.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/sounds/GameOver.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/sounds/Enemy_Hurt.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/sounds/Warning.wav" type="AudioStream" id=28]
+
+[node name="root" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="player" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 114.618, 278.872 )
+
+[node name="Camera2D" type="Camera2D" parent="player" index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = 0
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+_sections_unfolded = [ "Editor", "Limit", "Offset", "Smoothing", "Transform" ]
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+position = Vector2( -100, 20 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 589830, 3, 0, 655366, 3, 0, 720902, 3, 0, 786438, 3, 0, 851974, 3, 0, 917510, 3, 0, 917519, 0, 0, 917520, 1, 0, 917585, 0, 0, 917586, 3, 0, 983046, 3, 0, 983050, 0, 0, 983051, 1, 0, 983055, 4, 0, 983056, 2, 0, 983078, 0, 0, 983079, 1, 0, 983121, 3, 0, 983122, 3, 0, 1048581, 0, 0, 1048582, 3, 0, 1048583, 3, 0, 1048584, 3, 0, 1048585, 3, 0, 1048586, 3, 0, 1048587, 3, 0, 1048614, 3, 0, 1048615, 3, 0, 1048657, 3, 0, 1048658, 3, 0, 1114117, 3, 0, 1114118, 3, 0, 1114119, 3, 0, 1114120, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 3, 0, 1114124, 3, 0, 1114125, 3, 0, 1114126, 3, 0, 1114127, 3, 0, 1114128, 3, 0, 1114129, 3, 0, 1114130, 3, 0, 1114131, 3, 0, 1114132, 3, 0, 1114133, 3, 0, 1114134, 3, 0, 1114135, 3, 0, 1114136, 3, 0, 1114137, 3, 0, 1114138, 3, 0, 1114139, 3, 0, 1114140, 3, 0, 1114141, 3, 0, 1114142, 3, 0, 1114143, 3, 0, 1114144, 3, 0, 1114145, 3, 0, 1114146, 3, 0, 1114147, 3, 0, 1114148, 3, 0, 1114149, 3, 0, 1114150, 3, 0, 1114151, 3, 0, 1114152, 3, 0, 1114153, 3, 0, 1114154, 3, 0, 1114155, 3, 0, 1114156, 3, 0, 1114157, 3, 0, 1114158, 3, 0, 1114159, 3, 0, 1114160, 3, 0, 1114161, 3, 0, 1114162, 3, 0, 1114193, 3, 0, 1114194, 3, 0, 1179653, 3, 0, 1179654, 3, 0, 1179655, 3, 0, 1179656, 3, 0, 1179657, 3, 0, 1179658, 3, 0, 1179659, 3, 0, 1179660, 3, 0, 1179661, 3, 0, 1179662, 3, 0, 1179663, 3, 0, 1179664, 3, 0, 1179665, 3, 0, 1179666, 3, 0, 1179667, 3, 0, 1179668, 3, 0, 1179669, 3, 0, 1179670, 3, 0, 1179671, 3, 0, 1179672, 3, 0, 1179673, 3, 0, 1179674, 3, 0, 1179675, 3, 0, 1179676, 3, 0, 1179677, 3, 0, 1179678, 3, 0, 1179679, 3, 0, 1179680, 3, 0, 1179681, 3, 0, 1179682, 3, 0, 1179683, 3, 0, 1179684, 3, 0, 1179685, 3, 0, 1179686, 3, 0, 1179687, 3, 0, 1179688, 3, 0, 1179689, 3, 0, 1179690, 3, 0, 1179691, 3, 0, 1179692, 3, 0, 1179693, 3, 0, 1179694, 3, 0, 1179695, 3, 0, 1179696, 3, 0, 1179697, 3, 0, 1179698, 3, 0, 1179729, 3, 0, 1179730, 3, 0, 1245189, 4, 0, 1245190, 3, 0, 1245191, 3, 0, 1245192, 2, 0, 1245209, 3, 0, 1245210, 3, 0, 1245265, 3, 0, 1245266, 3, 0, 1310745, 3, 0, 1310746, 3, 0, 1310777, 0, 0, 1310778, 3, 0, 1310779, 3, 0, 1310780, 3, 0, 1310781, 3, 0, 1310782, 3, 0, 1310783, 3, 0, 1310784, 3, 0, 1310785, 3, 0, 1310786, 3, 0, 1310787, 3, 0, 1310788, 3, 0, 1310789, 3, 0, 1310790, 3, 0, 1310791, 3, 0, 1310792, 3, 0, 1310793, 3, 0, 1310794, 3, 0, 1310795, 3, 0, 1310796, 3, 0, 1310797, 3, 0, 1310798, 3, 0, 1310799, 3, 0, 1310800, 3, 0, 1310801, 3, 0, 1310802, 3, 0, 1376281, 3, 0, 1376282, 3, 0, 1376313, 3, 0, 1376314, 3, 0, 1376315, 3, 0, 1376316, 3, 0, 1376317, 3, 0, 1376318, 3, 0, 1376319, 3, 0, 1376320, 3, 0, 1376321, 3, 0, 1376322, 3, 0, 1376323, 3, 0, 1376324, 3, 0, 1376325, 3, 0, 1376326, 3, 0, 1376327, 3, 0, 1376328, 3, 0, 1376329, 3, 0, 1376330, 3, 0, 1376331, 3, 0, 1376332, 3, 0, 1376333, 3, 0, 1376334, 3, 0, 1376335, 3, 0, 1376336, 3, 0, 1376337, 3, 0, 1376338, 3, 0, 1441817, 3, 0, 1441818, 3, 0, 1441847, 0, 0, 1441848, 3, 0, 1441849, 3, 0, 1441850, 3, 0, 1507353, 3, 0, 1507354, 3, 0, 1507383, 3, 0, 1507384, 3, 0, 1507385, 3, 0, 1507386, 3, 0, 1572889, 3, 0, 1572890, 3, 0, 1572917, 0, 0, 1572918, 3, 0, 1572919, 3, 0, 1572920, 3, 0, 1572921, 3, 0, 1572922, 3, 0, 1638425, 3, 0, 1638426, 3, 0, 1638453, 3, 0, 1638454, 3, 0, 1638455, 3, 0, 1638456, 3, 0, 1638457, 3, 0, 1638458, 3, 0, 1703961, 3, 0, 1703962, 3, 0, 1703987, 0, 0, 1703988, 3, 0, 1703989, 3, 0, 1703990, 3, 0, 1703991, 3, 0, 1703992, 3, 0, 1769497, 3, 0, 1769498, 3, 0, 1769510, 0, 0, 1769511, 1, 0, 1769523, 3, 0, 1769524, 3, 0, 1769525, 3, 0, 1769526, 3, 0, 1769527, 3, 0, 1769528, 3, 0, 1835033, 3, 0, 1835034, 3, 0, 1835035, 3, 0, 1835036, 3, 0, 1835037, 3, 0, 1835038, 3, 0, 1835039, 3, 0, 1835040, 3, 0, 1835041, 3, 0, 1835042, 3, 0, 1835043, 3, 0, 1835044, 3, 0, 1835045, 3, 0, 1835046, 3, 0, 1835047, 3, 0, 1835048, 3, 0, 1835049, 3, 0, 1835050, 3, 0, 1835051, 3, 0, 1835052, 3, 0, 1835053, 3, 0, 1835054, 3, 0, 1835055, 3, 0, 1835056, 3, 0, 1835057, 3, 0, 1835058, 3, 0, 1835059, 3, 0, 1835060, 3, 0, 1835061, 3, 0, 1835062, 3, 0, 1900569, 3, 0, 1900570, 3, 0, 1900571, 3, 0, 1900572, 3, 0, 1900573, 3, 0, 1900574, 3, 0, 1900575, 3, 0, 1900576, 3, 0, 1900577, 3, 0, 1900578, 3, 0, 1900579, 3, 0, 1900580, 3, 0, 1900581, 3, 0, 1900582, 3, 0, 1900583, 3, 0, 1900584, 3, 0, 1900585, 3, 0, 1900586, 3, 0, 1900587, 3, 0, 1900588, 3, 0, 1900589, 3, 0, 1900590, 3, 0, 1900591, 3, 0, 1900592, 3, 0, 1900593, 3, 0, 1900594, 3, 0, 1900595, 3, 0, 1900596, 3, 0, 1900597, 3, 0, 1900598, 3, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="ui" type="CanvasLayer" parent="." index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="craft" parent="ui" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( -163.189, 0 )
+
+[node name="hp" type="TextureProgress" parent="ui" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 110.0
+margin_bottom = 30.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 100.0
+exp_edit = false
+rounded = false
+texture_under = ExtResource( 5 )
+texture_over = null
+texture_progress = ExtResource( 6 )
+radial_fill_degrees = 360.0
+radial_center_offset = Vector2( 0, 0 )
+nine_patch_stretch = true
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+_sections_unfolded = [ "Radial Fill", "Textures" ]
+
+[node name="hp_text" type="Label" parent="ui" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 118.0
+margin_top = 17.0
+margin_right = 158.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "10"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="spell_queue" type="VBoxContainer" parent="ui" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 60.0
+margin_right = 60.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = ExtResource( 8 )
+
+[node name="mp_text" type="Label" parent="ui" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 40.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "5"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="mp_warning" parent="ui" index="5" instance=ExtResource( 9 )]
+
+margin_left = 50.0
+margin_top = 40.0
+margin_right = 90.0
+margin_bottom = 60.0
+
+[node name="spider" parent="." index="3" instance=ExtResource( 10 )]
+
+position = Vector2( 894.236, 328.515 )
+patrol = PoolVector2Array( 860, 0, 1120, 0 )
+
+[node name="spider2" parent="." index="4" instance=ExtResource( 10 )]
+
+position = Vector2( 403.762, 454.363 )
+patrol = PoolVector2Array( 360, 0, 490, 0 )
+
+[node name="sounds" type="Node" parent="." index="5"]
+
+editor/display_folded = true
+script = ExtResource( 11 )
+
+[node name="heal" type="AudioStreamPlayer" parent="sounds" index="0"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="jump" type="AudioStreamPlayer" parent="sounds" index="1"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="player_hurt" type="AudioStreamPlayer" parent="sounds" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="craft_panel_open" type="AudioStreamPlayer" parent="sounds" index="3"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="craft_panel_close" type="AudioStreamPlayer" parent="sounds" index="4"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_translate" type="AudioStreamPlayer" parent="sounds" index="5"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_add" type="AudioStreamPlayer" parent="sounds" index="6"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_remove1" type="AudioStreamPlayer" parent="sounds" index="7"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_remove2" type="AudioStreamPlayer" parent="sounds" index="8"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_remove3" type="AudioStreamPlayer" parent="sounds" index="9"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_fall" type="AudioStreamPlayer" parent="sounds" index="10"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_move" type="AudioStreamPlayer" parent="sounds" index="11"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="m3_hold" type="AudioStreamPlayer" parent="sounds" index="12"]
+
+stream = ExtResource( 24 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="cast_projectile" type="AudioStreamPlayer" parent="sounds" index="13"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="game_over" type="AudioStreamPlayer" parent="sounds" index="14"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Game Over"
+
+[node name="enemy_hurt" type="AudioStreamPlayer" parent="sounds" index="15"]
+
+stream = ExtResource( 27 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="warning" type="AudioStreamPlayer" parent="sounds" index="16"]
+
+stream = ExtResource( 28 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="craft" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 323.0
+margin_top = 193.0
+margin_right = 647.0
+margin_bottom = 295.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "Press E to open craft panel
+Move selection with arrows
+Use SPACE to select item 
+and arrow to move items
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="movement" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 78.0
+margin_top = 210.0
+margin_right = 232.0
+margin_bottom = 227.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "Use AD to move, W to jump"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="spell" type="Label" parent="." index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 606.0
+margin_top = 262.0
+margin_right = 766.0
+margin_bottom = 276.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "Press SPACE to cast spell"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label" type="Label" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1004.0
+margin_top = 301.0
+margin_right = 1166.0
+margin_bottom = 319.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "There is no more content ;c"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+
